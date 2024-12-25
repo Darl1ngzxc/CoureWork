@@ -42,7 +42,7 @@ public partial class FormKnapsack : Form
 
     public void Show(int currentConditionIndex)
     {
-       // LoadBeforeOperation();
+        LoadBeforeOperation();
         if (knapsackManager == null || pictureBox.Height == 0 || pictureBox.Width == 0)
         {
             return;
@@ -98,7 +98,6 @@ public partial class FormKnapsack : Form
 
     private void buttonSolve_Click(object sender, EventArgs e)
     {
-        LoadBeforeOperation();
         SaveBeforeOperation();
         int currentstep = currentStateStep;
         savedState = knapsackManager.GetStorage().GetState(currentstep);
@@ -311,6 +310,7 @@ public partial class FormKnapsack : Form
 
     private void SaveBeforeOperation()
     {
+        savedStates._storage.Clear();
         foreach (var x in knapsackManager.storage._storage)
         {
             var clonnedState = x.Clone();
