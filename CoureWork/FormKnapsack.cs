@@ -303,6 +303,10 @@ public partial class FormKnapsack : Form
                 buttonSolve.Enabled = false;
                 isSolved = true;
             }
+            else
+            {
+                isSolved = false;
+            }
         }
         buttonAddItem.Enabled = true;
         SaveBeforeOperation();
